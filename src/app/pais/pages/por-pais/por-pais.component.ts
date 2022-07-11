@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { PaisService } from '../../services/pais.service';
 
 @Component({
@@ -8,6 +8,8 @@ import { PaisService } from '../../services/pais.service';
   ]
 })
 export class PorPaisComponent {
+
+  @ViewChild('inputPais') inputPais !: ElementRef<HTMLInputElement>;
 
   termino : string = 'Hola mundo';
   hayError: boolean= false;
@@ -24,6 +26,10 @@ export class PorPaisComponent {
       }, ( err ) => {
         this.hayError = true;
       });
+
+      this.inputPais.nativeElement.value = '';
   }
+
+  
   
 }
