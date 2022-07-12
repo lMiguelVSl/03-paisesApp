@@ -43,9 +43,14 @@
             </thead>
 
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>bandera</td>
+                <tr *ngFor="let country of Countries">
+                    <td> {{country.alpha3Code}} </td>
+                    <td>
+                        <img  
+                            class="small-flag"
+                            [src]="country.flags.png" 
+                        >
+                    </td>
                     <td>nombre</td>
                 </tr>
             </tbody>

@@ -12,11 +12,11 @@ export class PaisService {
 
   constructor( private http : HttpClient ) { }
 
-  buscarPais ( termino : string ) : Observable<Country>
+  buscarPais ( termino : string ) : Observable<Country[]>
   {
     const url = `${ this.ApiUrl }/name/${termino}`;
 
-    return this.http.get<Country>( url );
+    return this.http.get<Country[]>( url );
   }
 
 }
