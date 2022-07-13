@@ -10,7 +10,6 @@ import { Country } from '../../interfaces/pais.interface';
 })
 export class PorPaisComponent {
 
-  @ViewChild('inputPais') inputPais !: ElementRef<HTMLInputElement>;
 
   termino   : string = '';
   hayError  : boolean= false;
@@ -18,16 +17,15 @@ export class PorPaisComponent {
 
   constructor( private paisService : PaisService ) { }
 
-  buscar(){
+  buscar( termino : string ){
 
     this.hayError = false;
-
+    this.termino  = termino;
     console.log( this.termino );
 
     this.paisService.buscarPais( this.termino )
     .subscribe( ( countries ) => 
-      {
-        console.log( countries ); 
+      { 
         this.Countries = countries; 
       
       }, ( err ) => {
@@ -36,8 +34,7 @@ export class PorPaisComponent {
         this.Countries = []
       
       });
-
-      this.inputPais.nativeElement.value = '';
+     
   }
 
   
