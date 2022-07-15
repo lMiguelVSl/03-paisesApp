@@ -23,7 +23,7 @@
                         [src]="country.flags.png" 
                     >
                 </td>
-                <td> {{country.name}} </td>
+                <td> {{country.capital}}, {{country.name}} </td>
                 <td> {{country.population | number }} </td>
                 <td> 
                     <a [routerLink]="[ '/pais', country.alpha2Code ]">Ver...</a> 

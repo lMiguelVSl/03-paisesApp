@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 
 import { Country } from '../../interfaces/pais.interface';
@@ -11,6 +11,7 @@ import { PaisService } from '../../services/pais.service';
   ]
 })
 export class PorCapitalComponent {
+
 
   termino   : string = '';
   hayError  : boolean= false;
@@ -41,8 +42,6 @@ export class PorCapitalComponent {
      
   }
 
-  sugges(){
-
-  }
+ 
 
 }
