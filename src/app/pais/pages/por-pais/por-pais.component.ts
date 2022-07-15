@@ -37,6 +37,8 @@ export class PorPaisComponent {
      
   }
 
-  
-  
+  sugges(){
+
+  }
+
 }

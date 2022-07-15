@@ -1,5 +1,5 @@
 import { Component, ElementRef, EventEmitter, Output, ViewChild, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
+import { debounceTime, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-pais-input',
@@ -19,11 +19,11 @@ export class PaisInputComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
-    this.debouncer.subscribe( value => {
-      console.log('debouncer: ', value);
+    this.debouncer
+    .pipe(debounceTime(1000))
+    .subscribe( value => {
+      this.onDebounce.emit( value );
     });
-
   }
 
   buscar() {
@@ -32,8 +32,6 @@ export class PaisInputComponent implements OnInit {
   }
 
   letterPress( ){
-
     this.debouncer.next( this.termino );
-
   }
 }
