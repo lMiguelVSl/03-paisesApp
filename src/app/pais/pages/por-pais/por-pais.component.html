@@ -18,7 +18,7 @@
     Doesn't found some Country with this name "{{termino}}"
 </div> 
 
-<div class="row">
+<div *ngIf="!hayError" class="row">
     <div class="col">
         <app-pais-tabla [Countries]="Countries"></app-pais-tabla>
     </div>
