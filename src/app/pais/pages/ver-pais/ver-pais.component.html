@@ -22,10 +22,32 @@
             <h3>Informacion</h3>
             <ul class="list-group">
                 <li class="list-group-item">
-                    <strong>Poblacion</strong> 
-                    {{country.population}}
+                    <strong>Poblacion</strong> {{country.population}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Codigo Numerico</strong> {{country.numericCode}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Codigo alpha</strong> {{country.alpha3Code}}
                 </li>
             </ul>
+        </div>
+    </div>
+
+    <h3>Traductions</h3>
+
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-primary mr-1">{{ country.translations.de}}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations.es}}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations.fr}}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations.ja}}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations.it}}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations.br}}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations.pt}}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations.nl}}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations.hr}}</span>
+            <span class="badge bg-primary mr-1">{{ country.translations.fa}}</span>
         </div>
     </div>
 
